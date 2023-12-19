@@ -11,7 +11,7 @@ int main()
   bool quit = false;
   gui.addElement({}, mc_rtc::gui::Button("Quit", [&]() { quit = true; }));
 
-  auto solver = std::make_shared<AccelerationSolver<mc_solver::TasksQPSolver>>(robots, dt);
+  auto solver = std::make_shared<AccelerationSolver<mc_solver::TVMQPSolver>>(robots, dt);
 
   gui.addElement(
       {}, mc_rtc::gui::Robot(robots->robot().name(), [&]() -> const mc_rbdyn::Robot & { return robots->robot(); }));
